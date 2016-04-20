@@ -18,4 +18,4 @@ def saludo(request):
 		'video_youtube': video_youtube
 	}
 	# devolvemos los datos a la vista saludo.html para printarlos
-	return render(request, 'saludo.py', context)
+	return render(request, 'index.py', context)
