@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title>{{ titulo }}</title>
+
+	{% load staticfiles %}
+
+	<script src="{% static "js/jquery-2.2.2.min.js" %}" type="text/javascript"></script>
+
+	<!-- React JS -->
+	<script src="{% static "js/react-0.14.8.js" %}"></script>
+	<script src="{% static "js/react-dom-0.14.8.js" %}"></script>
+    <script src="{% static "js/JSXTransformer-0.13.3.js" %}"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link type="text/css" rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+
+	<!-- Optional theme -->
+	<link type="text/css" rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %}">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="{% static "js/bootstrap.min.js" %}"></script>
+</head>
+<body>	
+
+	<div class="container">		
+
+		<div id="wra"></div>
+
+		<script type="text/jsx">
+			var HolaMundo = React.createClass({
+				render: function () {
+					return (
+					                	
+					<div className="row">
+						<div className="col-md-12">
+					        <h1> {{ titulo }} </h1>
+
+					        {/* Video 16:9 aspect ratio */}
+					        <h3>Video: {{ titulo_video_youtube }}</h3>
+							<div className="embed-responsive embed-responsive-16by9">
+							  <iframe className="embed-responsive-item" src="{{ video_youtube }}"></iframe>
+							</div>							
+					    </div>
+					</div>
+
+					);
+				}
+			 });
+
+
+
+			ReactDOM.render(<HolaMundo /> , document.getElementById('wra'));
+		</script>
+
+		<br><br>
+
+		<div class="footer" align="center">
+			Desarrollado por <a href="{{ web }}" target="_blank">{{ autor }}</a>
+		</div>
+		
+	</div>
+
+			
+</body>
+</html>
